@@ -18,7 +18,7 @@ public class Main {
         Contact c3 = new Contact("Ina","12143423","ina@web.de");
         Contact c4 = new Contact("Ina","24423","i@web.de");
 
-       // ContactService service = new ContactServiceDummy();
+   //     ContactService service = new ContactServiceDummy();
         ContactService service = new ContactServiceFile();
         service.save(c1);
         service.save(c2);

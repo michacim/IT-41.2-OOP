@@ -25,6 +25,8 @@ public class Main {
 
         p1.setFirstname("Karl");
 
+        int a=3;
+
 
     }
 }
