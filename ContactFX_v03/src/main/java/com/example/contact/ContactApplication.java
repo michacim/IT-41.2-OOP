@@ -11,8 +11,8 @@ public class ContactApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(ContactApplication.class.getResource("contact-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-        stage.setTitle("Hello!");
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setTitle("Contacts!");
         stage.setScene(scene);
         stage.show();
     }

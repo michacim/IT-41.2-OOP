@@ -3,7 +3,7 @@
 
 
 ## Feature
-* Version mit TableView
+* Version mit TableView, Controller und FXML
 * save
 * deleteById
 * findAll
@@ -14,3 +14,9 @@
 * update
 
 ## Ideas
+
+## Aufgabe
+ ContactFX soll mit FXML, Controller und TableView funktionieren
+ Vorlagen: Contact_v02, _10_FXTableView
+ 
+Zusatz: update implementieren

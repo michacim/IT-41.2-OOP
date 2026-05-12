@@ -8,7 +8,8 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 
 public class ContactController {
-
+    @FXML
+    private TextField searchField;
     // ------------------ FXML-Fields ---------------------------
     // TableView ---------------------------------------
     @FXML
@@ -41,7 +42,9 @@ public class ContactController {
     void onSave(ActionEvent event) {
 
     }
-
+    @FXML
+    void onSearch(ActionEvent actionEvent) {
+    }
     @FXML
     void initialize(){
 
