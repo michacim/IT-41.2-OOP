@@ -7,6 +7,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 
+import javax.swing.*;
+
 public class HelloController {
 
     @FXML
@@ -37,5 +39,6 @@ public class HelloController {
     @FXML
     void initialize() {  // wird nach Controller-Objekt-Erzeugung automatisch aufgerufen
         inputField.setText("Text...");
+
     }
 }
