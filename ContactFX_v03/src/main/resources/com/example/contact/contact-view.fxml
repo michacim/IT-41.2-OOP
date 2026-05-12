@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.BorderPane?>
+<BorderPane fx:controller="com.example.contact.controller.ContactController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
+            prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
+    <center>
+        <TableView fx:id="tableView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <columns>
+                <TableColumn fx:id="nameCol" prefWidth="75.0" text="Name"/>
+                <TableColumn fx:id="numberCol" prefWidth="75.0" text="Nummer"/>
+                <TableColumn fx:id="emailCol" prefWidth="75.0" text="E-Mail"/>
+            </columns>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+            </columnResizePolicy>
+            <contextMenu>
+                <ContextMenu>
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#onDelete" text="Delete"/>
+                    </items>
+                </ContextMenu>
+            </contextMenu>
+        </TableView>
+    </center>
+    <top>
+        <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <items>
+                <TextField fx:id="nameField" promptText="Name"/>
+                <TextField fx:id="numberField" promptText="Nummer"/>
+                <TextField fx:id="emailField" promptText="E-Mail"/>
+                <Button mnemonicParsing="false" onAction="#onSave" text="Save"/>
+            </items>
+        </ToolBar>
+    </top>
+</BorderPane>
