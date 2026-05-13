@@ -18,6 +18,7 @@ public class ContactController {
     //---------------- Custom Fields --------------------------
 
     private ContactService service = new ContactServiceFile();
+    private Contact updateContact;
 
     @FXML
     private TextField searchField;
@@ -42,6 +43,8 @@ public class ContactController {
 
     @FXML
     private Button updateButton;
+
+
 
     @FXML
     void onDelete(ActionEvent event) {
@@ -75,11 +78,15 @@ public class ContactController {
         boolean saved = service.save(newContact);
         if (saved) {
             tableView.getItems().setAll(service.findAll()); //refresh
-            nameField.clear();
-            numberField.clear();
-            emailField.clear();
+            clearInputFields();
         }
 
+    }
+
+    private void clearInputFields() {
+        nameField.clear();
+        numberField.clear();
+        emailField.clear();
     }
 
     @FXML
@@ -111,12 +118,23 @@ public class ContactController {
     }
 
     public void onEdit(ActionEvent actionEvent) {
+        updateContact = tableView.getSelectionModel().getSelectedItem();
+        nameField.setText(updateContact.getName());
+        numberField.setText(updateContact.getNumber());
+        emailField.setText(updateContact.getEmail());
         updateButton.setDisable(false);
 
     }
 
     public void onUpdate(ActionEvent actionEvent) {
+       // service.update()
         updateButton.setDisable(true);
-        //service.update()
+        updateContact.setName(nameField.getText());
+        updateContact.setNumber(numberField.getText());
+        updateContact.setEmail(emailField.getText());
+        service.update(updateContact);
+        tableView.getItems().setAll(service.findAll()); //refresh
+        clearInputFields();
+
     }
 }

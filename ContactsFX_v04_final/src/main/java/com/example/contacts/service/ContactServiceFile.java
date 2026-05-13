@@ -59,6 +59,18 @@ public class ContactServiceFile implements ContactService{
         //1. Liste holen : findAll()
         //2. Liste (Contact) verändern/updaten
         //3. Datei neu schreiben
+
+        List<Contact> findAll = findAll();
+        for (Contact c: findAll){
+            if(c.getId() == contact.getId()){
+                c.setName(contact.getName());
+                c.setNumber(contact.getNumber());
+                c.setEmail(contact.getEmail());
+                FileHandler.writeContacts(findAll);
+                return true;
+            }
+        }
+
         return false;
     }
 
