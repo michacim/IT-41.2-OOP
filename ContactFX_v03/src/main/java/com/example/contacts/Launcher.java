@@ -1,4 +1,4 @@
-package com.example.contact;
+package com.example.contacts;
 
 import javafx.application.Application;
 

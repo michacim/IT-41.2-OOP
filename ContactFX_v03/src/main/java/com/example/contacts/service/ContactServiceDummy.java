@@ -1,4 +1,4 @@
-package com.example.contact.service;
+package com.example.contacts.service;
 
 
 

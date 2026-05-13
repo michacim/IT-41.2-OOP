@@ -1,13 +1,22 @@
-package com.example.contact.controller;
+package com.example.contacts.controller;
 
-import com.example.contact.model.Contact;
+import com.example.contacts.model.Contact;
+import com.example.contacts.service.ContactService;
+import com.example.contacts.service.ContactServiceFile;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 
+import java.util.List;
+
 public class ContactController {
+    //---------------- Custom Fields --------------------------
+
+    private ContactService service = new ContactServiceFile();
+
     @FXML
     private TextField searchField;
     // ------------------ FXML-Fields ---------------------------
@@ -47,6 +56,11 @@ public class ContactController {
     }
     @FXML
     void initialize(){
+        System.out.println("inti Controller");
+        List<Contact> persons = service.findAll();
+        System.out.println(persons);
+        //tableView.setItems(FXCollections.observableArrayList(persons));//ArrayList zu ObservableList
+        tableView.getItems().setAll(persons);
 
     }
 

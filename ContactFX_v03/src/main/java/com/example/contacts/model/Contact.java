@@ -1,4 +1,4 @@
-package com.example.contact.model;
+package com.example.contacts.model;
 
 import java.util.Objects;
 
