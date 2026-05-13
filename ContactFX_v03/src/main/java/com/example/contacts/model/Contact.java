@@ -53,15 +53,9 @@ public class Contact {
         this.id = id;
     }
 
+
     @Override
     public String toString() {
-        return name+" | "+number+" | "+email;
-    }
-
-
-
-
-    public String toStringAll() {
         return "Contact{" +
                 "name='" + name + '\'' +
                 ", number='" + number + '\'' +

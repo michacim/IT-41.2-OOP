@@ -2,6 +2,7 @@ package com.example.contacts.io;
 
 
 
+import com.example.contacts.FileCorruptedException;
 import com.example.contacts.model.Contact;
 
 import java.io.File;
@@ -9,6 +10,7 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -54,7 +56,10 @@ public class FileHandler {
             while(sc.hasNext()){
                 String line = sc.nextLine();
                 String[] arr= line.split(",");
-                //System.out.println(Arrays.toString(arr));
+                System.out.println(arr.length);
+                if(arr.length!=4){
+                    throw new FileCorruptedException("Dateiformat nicht Korrekt!");
+                }
                 int id = Integer.parseInt(arr[0]);
                 String name = arr[1];
                 String number =arr[2];

@@ -31,15 +31,13 @@
     </center>
     <top>
         <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-            <items>
-                <TextField fx:id="nameField" promptText="Name" />
-                <TextField fx:id="numberField" promptText="Nummer" />
-                <TextField fx:id="emailField" promptText="E-Mail" />
-                <Button mnemonicParsing="false" onAction="#onSave" text="Save" />
-            </items>
+            <TextField fx:id="nameField" promptText="Name"/>
+            <TextField fx:id="numberField" promptText="Nummer"/>
+            <TextField fx:id="emailField" promptText="E-Mail"/>
+            <Button mnemonicParsing="false" onAction="#onSave" text="Save"/>
         </ToolBar>
     </top>
    <bottom>
-      <TextField fx:id="searchField" onAction="#onSearch" BorderPane.alignment="CENTER" />
+      <TextField fx:id="searchField" onKeyTyped="#onSearch" promptText="Suche nach Namen" BorderPane.alignment="CENTER" />
    </bottom>
 </BorderPane>
